@@ -32,7 +32,7 @@ app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) })
 
 app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 
-const DATABASE_URL = process.env.DATABASE_URL
-app.listen(DATABASE_URL, () => { console.log(`server is listening on port ${DATABASE_URL}`) })
+const port = process.env.PORT || 3000
+app.listen(port, () => { console.log(`server is listening on port ${port}`) })
 
-console.log(DATABASE_URL)
+console.log(port)
