@@ -8,31 +8,27 @@ const signin = require('./controllers/signin');
 const image = require('./controllers/image')
 const profile = require('./controllers/profile')
 
-// const postgres = require('postgres');
+const postgres = require('postgres');
 require('dotenv').config();
 
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-// const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
+const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
 
-// const sql = postgres(URL, { ssl: 'require' });
+const sql = postgres(URL, { ssl: 'require' });
 
-// async function getPostgresVersion() {
-//     const result = await sql`select version()`;
-//     console.log(result);
-// }
+async function getPostgresVersion() {
+    const result = await sql`select version()`;
+    console.log(result);
+}
 
-// getPostgresVersion();
+getPostgresVersion();
 
 const db = knex({
     client: 'pg',
-    connection: {
-        host: PGHOST,
-        port: 5432,
-        user: PGUSER,
-        password: PGPASSWORD,
-        database: PGDATABASE
-    }
+    connection: URL
 });
+
+console.log(URL)
 
 const app = express();
 
