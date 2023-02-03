@@ -10,8 +10,13 @@ const profile = require('./controllers/profile')
 
 const db = knex({
     client: 'pg',
-    connection: process.env.PG_CONNECTION_STRING,
-    searchPath: ['knex', 'public'],
+    connection: {
+        hostname: 'dpg-cfe98ppmbjsqnjljpp80-a',
+        port: 5432,
+        username: 'tjrelly',
+        password: 'mdLzVwxhTwGd1RgMjo4qi9jdg7eFTNQV',
+        database: 'smartbrain_dfrt'
+    }
 });
 
 const app = express();
