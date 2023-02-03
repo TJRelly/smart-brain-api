@@ -1,7 +1,6 @@
 {
   "name": "smart-brain-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -14,9 +13,21 @@
     "body-parser": "^1.20.1",
     "clarifai": "^2.9.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "knex": "^2.4.2",
     "nodemon": "^2.0.20",
-    "pg": "^8.8.0"
-  }
+    "pg": "^8.8.0",
+    "postgres": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TJRelly/smart-brain-api.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/TJRelly/smart-brain-api/issues"
+  },
+  "homepage": "https://github.com/TJRelly/smart-brain-api#readme",
+  "description": ""
 }
