@@ -11,11 +11,11 @@ const profile = require('./controllers/profile')
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgres://tjrelly:mdLzVwxhTwGd1RgMjo4qi9jdg7eFTNQV@dpg-cfe98ppmbjsqnjljpp80-a/smartbrain_dfrt',
+        host: 'dpg-cfe98ppmbjsqnjljpp80-a',
         port: 5432,
-        user: 'postgres',
-        password: 'test',
-        database: 'smart-brain'
+        user: 'tjrelly',
+        password: 'mdLzVwxhTwGd1RgMjo4qi9jdg7eFTNQV',
+        database: 'smartbrain_dfrt'
     }
 });
 
