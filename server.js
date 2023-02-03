@@ -10,13 +10,8 @@ const profile = require('./controllers/profile')
 
 const db = knex({
     client: 'pg',
-    connection: {
-        host: 'dpg-cfe98ppmbjsqnjljpp80-a',
-        port: 5432,
-        user: 'tjrelly',
-        password: 'mdLzVwxhTwGd1RgMjo4qi9jdg7eFTNQV',
-        database: 'smartbrain_dfrt'
-    }
+    connection: process.env.dpg - cfe98ppmbjsqnjljpp80 - a,
+    searchPath: ['knex', 'public'],
 });
 
 const app = express();
