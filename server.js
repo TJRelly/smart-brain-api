@@ -10,7 +10,7 @@ const profile = require('./controllers/profile')
 
 const db = knex({
     client: 'pg',
-    connection: process.env.dpg - cfe98ppmbjsqnjljpp80 - a,
+    connection: process.env.PG_CONNECTION_STRING,
     searchPath: ['knex', 'public'],
 });
 
