@@ -11,7 +11,7 @@ const profile = require('./controllers/profile')
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'postgres://tjrelly:mdLzVwxhTwGd1RgMjo4qi9jdg7eFTNQV@dpg-cfe98ppmbjsqnjljpp80-a/smartbrain_dfrt',
         port: 5432,
         user: 'postgres',
         password: 'test',
