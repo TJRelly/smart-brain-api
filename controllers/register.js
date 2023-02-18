@@ -32,5 +32,5 @@ const handleRegister = (req, res, bcrypt, db) => {
 }
 
 module.exports = {
-    handleRegister: handleRegister
+    handleRegister
 }

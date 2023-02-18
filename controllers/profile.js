@@ -13,5 +13,5 @@ handleProfile = (req, res, db) => {
 }
 
 module.exports = {
-    handleProfile: this.handleProfile
+    handleProfile
 }

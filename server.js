@@ -25,6 +25,7 @@ app.use(cors())
 
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, bcrypt, db) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, bcrypt, db) })
+app.post('/imageurl', (req, res) => { image.handleAPICall(req, res, db) })
 
 app.get('/', (req, res) => { res.send("it's working") })
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) })
