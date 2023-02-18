@@ -30,7 +30,7 @@ app.post('/imageurl', (req, res) => { image.handleAPICall(req, res) })
 app.get('/', (req, res) => { res.send("it's working") })
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db) })
 
-app.put('/image', (req, res) => { image.handleImage(req, res) })
+app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 
 const port = process.env.PORT || 3000
 app.listen(port, () => { console.log(`server is listening on port ${port}`) })
