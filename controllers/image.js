@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const handleAPICall = (req, res) => {
     const raw = JSON.stringify({
         "user_app_id": {
@@ -25,18 +27,8 @@ const handleAPICall = (req, res) => {
     };
 
     fetch(`https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs`, requestOptions)
-<<<<<<< HEAD
-        .then(response => response.text())    
-        .then(result => {
-            console.log(result)
-            res.json(result)
-=======
-        .then(response => console.log(response.text()))
-        .then(response => {
-            console.log(response)
-            res.json(response)
->>>>>>> b9befdf1ff314c9db28ab7450a09684893ac8303
-        })
+        .then(response => response.text())
+        .then(result => res.json(result))
         .catch(err => res.status(400).json('unable to work with API'))
 }
 
