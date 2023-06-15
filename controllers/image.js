@@ -11,6 +11,5 @@ handleImage = (req, res, db) => {
 }
 
 module.exports = {
-    handleImage,
-    handleAPICall
+    handleImage
 }
