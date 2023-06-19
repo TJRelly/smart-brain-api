@@ -5,20 +5,18 @@ const handleSignIn = async (req, res, bcrypt, db) => {
   }
 
   try {
-    const user = await db
-      .select('id', 'name', 'email')
-      .from('users')
-      .where('email', '=', email)
-      .first();
-    
-    if (user) {
-      const isValid = bcrypt.compareSync(password, user.hash);
+    const data = await db
+      .select('email', 'hash')
+      .from('login')
+      .where('email', '=', email);
+    const isValid = bcrypt.compareSync(password, data[0].hash);
 
-      if (isValid) {
-        res.json(user);
-      } else {
-        res.status(400).json('wrong credentials');
-      }
+    if (isValid) {
+      const user = await db
+        .select('*')
+        .from('users')
+        .where('email', '=', email);
+      res.json(user[0]);
     } else {
       res.status(400).json('wrong credentials');
     }
@@ -27,6 +25,7 @@ const handleSignIn = async (req, res, bcrypt, db) => {
   }
 };
 
+
 module.exports = {
-  handleSignIn
-};
+    handleSignIn
+}
