@@ -27,12 +27,9 @@ const handleRegister = (req, res, bcrypt, db) => {
       })
       .then(trx.commit)
       .catch(trx.rollback)
-  })
-  .catch((err) => {
+  }).catch((err) => {
     res.status(400).json("unable to register")
   })
 }
 
-export default {
-  handleRegister,
-}
+module.exports = handleRegister

@@ -13,6 +13,6 @@ handleProfile = (req, res, db) => {
     .catch((err) => res.status(400).json("not found"))
 }
 
-export default {
-  handleProfile,
+module.exports = {
+  handleProfile
 }

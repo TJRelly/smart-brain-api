@@ -10,6 +10,5 @@ handleImage = (req, res, db) => {
     .catch((err) => res.status(400).json("unable to get count"))
 }
 
-export default {
-  handleImage,
-}
+module.exports = handleImage
+
