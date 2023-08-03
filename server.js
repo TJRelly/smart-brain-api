@@ -22,22 +22,22 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send(JSON.stringify({ message: "it's working" }))
 })
 
-app.get("/api/profile/:id", (req, res) => {
+app.get("/profile/:id", (req, res) => {
   profile.handleProfile(req, res, db)
 })
 
-app.post("/api/signin", (req, res) => {
+app.post("/signin", (req, res) => {
   signin.handleSignIn(req, res, bcrypt, db)
 })
-app.post("/api/register", (req, res) => {
+app.post("/register", (req, res) => {
   register.handleRegister(req, res, bcrypt, db)
 })
 
-app.put("/api/image", (req, res) => {
+app.put("/image", (req, res) => {
   image.handleImage(req, res, db)
   console.log(req)
 })
