@@ -1,6 +1,6 @@
 import fetch from "node-fetch"
 
-handleApiCall = (req, res) => {
+const handleApiCall = (req, res) => {
   const imageUrl = req.body.input
   const returnClarifaiRequestOptions = (url) => {
     const raw = JSON.stringify({
