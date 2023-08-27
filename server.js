@@ -7,7 +7,7 @@ const knex = require("knex")
 
 const register = require("./controllers/register")
 const signin = require("./controllers/signin")
-const image = require("./controllers/image.mjs")
+const image = require("./controllers/image.js")
 const profile = require("./controllers/profile")
 
 require("dotenv").config()

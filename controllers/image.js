@@ -1,4 +1,5 @@
 import fetch from "node-fetch"
+globalThis.fetch = fetch
 
 const handleApiCall = (req, res) => {
   const imageUrl = req.body.input
