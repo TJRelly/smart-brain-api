@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const bcrypt = require("bcrypt-nodejs")
 const cors = require("cors")
 const knex = require("knex")
+
 const register = require("./controllers/register")
 const signin = require("./controllers/signin")
 const image = require("./controllers/image")
@@ -28,6 +29,10 @@ app.post("/signin", (req, res) => {
 })
 app.post("/register", (req, res) => {
   register.handleRegister(req, res, bcrypt, db)
+})
+
+app.post("/imageurl", (req, res) => {
+  image.handleApiCall(req, res)
 })
 
 app.get("/", (req, res) => {
