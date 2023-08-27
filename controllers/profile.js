@@ -12,6 +12,6 @@ const handleProfile = (req, res, db) => {
       .catch(err => res.status(400).json('not found'))
 }
 
-module.exports = {
+export default {
   handleProfile
 }

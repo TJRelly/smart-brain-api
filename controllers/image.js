@@ -53,7 +53,7 @@ handleImage = (req, res, db) => {
     .catch((err) => res.status(400).json("unable to get count"))
 }
 
-module.exports = {
+export default {
   handleImage,
-  handleApiCall,
+  handleApiCall
 }
