@@ -26,6 +26,6 @@ const handleSignIn = async (req, res, bcrypt, db) => {
 };
 
 
-export default {
-    handleSignIn: handleSignIn
+module.exports = {
+    handleSignIn
 }

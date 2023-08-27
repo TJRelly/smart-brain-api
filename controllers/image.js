@@ -1,6 +1,4 @@
-import fetch from "node-fetch"
-
-const handleApiCall = (req, res) => {
+const handleApiCall = (req, res, fetch) => {
   const imageUrl = req.body.input
   const returnClarifaiRequestOptions = (url) => {
     const raw = JSON.stringify({
@@ -41,7 +39,7 @@ const handleApiCall = (req, res) => {
     .catch((err) => res.status(400).json("unable to work with API"))
 }
 
-const handleImage = (req, res, db) => {
+handleImage = (req, res, db) => {
   const { id } = req.body
   db("users")
     .where("id", "=", id)
@@ -53,7 +51,7 @@ const handleImage = (req, res, db) => {
     .catch((err) => res.status(400).json("unable to get count"))
 }
 
-export default {
-  handleApiCall: handleApiCall,
-  handleImage: handleImage,
+module.exports = {
+  handleImage,
+  handleApiCall,
 }

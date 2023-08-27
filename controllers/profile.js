@@ -1,4 +1,4 @@
-const handleProfile = (req, res, db) => {
+handleProfile = (req, res, db) => {
   const { id } = req.params;
   db.select('*').from('users').where({ id })
       .then(user => {
@@ -12,6 +12,6 @@ const handleProfile = (req, res, db) => {
       .catch(err => res.status(400).json('not found'))
 }
 
-export default {
-  handleProfile: handleProfile
+module.exports = {
+  handleProfile
 }

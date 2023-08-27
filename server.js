@@ -1,17 +1,16 @@
-import express from "express"
-import json from "body-parser"
-import bcrypt from "bcrypt-nodejs"
-import cors from "cors"
-import knex from "knex"
-import dotenv from 'dotenv'
+const express = require("express")
+const bodyParser = require("body-parser")
+const bcrypt = require("bcrypt-nodejs")
+const cors = require("cors")
+const knex = require("knex")
+const fetch = require("node-fetch")
 
-import handleRegister from "./controllers/register.js"
-import handleSignIn from "./controllers/signin.js"
-import handleApiCall from "./controllers/image.js"
-import handleImage from "./controllers/image.js"
-import handleProfile from "./controllers/profile.js"
+const register = require("./controllers/register")
+const signin = require("./controllers/signin")
+const image = require("./controllers/image")
+const profile = require("./controllers/profile")
 
-dotenv.config()
+require("dotenv").config()
 
 const db = knex({
   client: "pg",
@@ -23,19 +22,19 @@ const db = knex({
 
 const app = express()
 
-app.use(json())
+app.use(bodyParser.json())
 app.use(cors())
 
 app.post("/signin", (req, res) => {
-  handleSignIn(req, res, bcrypt, db)
+  signin.handleSignIn(req, res, bcrypt, db)
 })
 
 app.post("/register", (req, res) => {
-  handleRegister(req, res, bcrypt, db)
+  register.handleRegister(req, res, bcrypt, db)
 })
 
 app.post("/imageurl", (req, res) => {
-  handleApiCall(req, res)
+  image.handleApiCall(req, res, fetch)
 })
 
 app.get("/", (req, res) => {
@@ -43,11 +42,11 @@ app.get("/", (req, res) => {
 })
 
 app.get("/profile/:id", (req, res) => {
-  handleProfile(req, res, db)
+  profile.handleProfile(req, res, db)
 })
 
 app.put("/image", (req, res) => {
-  handleImage(req, res, db)
+  image.handleImage(req, res, db)
 })
 
 const port = process.env.PORT || 3000
