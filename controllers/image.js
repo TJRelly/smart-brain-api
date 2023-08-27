@@ -1,6 +1,7 @@
+const fetch = require("node-fetch")
+
 const handleApiCall = (req, res) => {
   const imageUrl = req.body.input
-  console.log(imageUrl)
   const returnClarifaiRequestOptions = (url) => {
     const raw = JSON.stringify({
       user_app_id: {
@@ -35,7 +36,6 @@ const handleApiCall = (req, res) => {
   )
     .then((response) => response.text())
     .then((data) => {
-      console.log(data)
       res.json(data)
     })
     .catch((err) => res.status(400).json("unable to work with API"))
