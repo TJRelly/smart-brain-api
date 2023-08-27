@@ -6,7 +6,8 @@ import knex from "knex"
 
 import handleRegister from "./controllers/register.js"
 import handleSignIn from "./controllers/signin.js"
-import { handleApiCall, handleImage } from "./controllers/image.js"
+import handleApiCall from "./controllers/image.js"
+import handleImage from "./controllers/image.js"
 import handleProfile from "./controllers/profile.js"
 
 require("dotenv").config()
