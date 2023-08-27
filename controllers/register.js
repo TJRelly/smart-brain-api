@@ -34,5 +34,5 @@ const handleRegister = (req, res, bcrypt, db) => {
 }
 
 export default {
-  handleRegister
+  handleRegister: handleRegister
 }

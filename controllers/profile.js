@@ -13,5 +13,5 @@ const handleProfile = (req, res, db) => {
 }
 
 export default {
-  handleProfile
+  handleProfile: handleProfile
 }
