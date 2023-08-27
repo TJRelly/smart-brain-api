@@ -27,6 +27,7 @@ app.use(cors())
 app.post("/signin", (req, res) => {
   signin.handleSignIn(req, res, bcrypt, db)
 })
+
 app.post("/register", (req, res) => {
   register.handleRegister(req, res, bcrypt, db)
 })
