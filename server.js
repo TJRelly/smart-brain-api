@@ -1,14 +1,14 @@
-const express = require("express")
-const bodyParser = require("body-parser")
-const bcrypt = require("bcrypt-nodejs")
-const cors = require("cors")
-const knex = require("knex")
+import express from "express"
+import { json } from "body-parser"
+import bcrypt from "bcrypt-nodejs"
+import cors from "cors"
+import knex from "knex"
 
 
-const register = require("./controllers/register")
-const signin = require("./controllers/signin")
-const image = require("./controllers/image.js")
-const profile = require("./controllers/profile")
+import { handleRegister } from "./controllers/register"
+import { handleSignIn } from "./controllers/signin"
+import { handleApiCall, handleImage } from "./controllers/image.js"
+import { handleProfile } from "./controllers/profile"
 
 require("dotenv").config()
 
@@ -22,19 +22,19 @@ const db = knex({
 
 const app = express()
 
-app.use(bodyParser.json())
+app.use(json())
 app.use(cors())
 
 app.post("/signin", (req, res) => {
-  signin.handleSignIn(req, res, bcrypt, db)
+  handleSignIn(req, res, bcrypt, db)
 })
 
 app.post("/register", (req, res) => {
-  register.handleRegister(req, res, bcrypt, db)
+  handleRegister(req, res, bcrypt, db)
 })
 
 app.post("/imageurl", (req, res) => {
-  image.handleApiCall(req, res)
+  handleApiCall(req, res)
 })
 
 app.get("/", (req, res) => {
@@ -42,11 +42,11 @@ app.get("/", (req, res) => {
 })
 
 app.get("/profile/:id", (req, res) => {
-  profile.handleProfile(req, res, db)
+  handleProfile(req, res, db)
 })
 
 app.put("/image", (req, res) => {
-  image.handleImage(req, res, db)
+  handleImage(req, res, db)
 })
 
 const port = process.env.PORT || 3000
