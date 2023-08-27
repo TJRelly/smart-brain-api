@@ -1,14 +1,13 @@
 import express from "express"
-import { json } from "body-parser"
+import json from "body-parser"
 import bcrypt from "bcrypt-nodejs"
 import cors from "cors"
 import knex from "knex"
 
-
-import { handleRegister } from "./controllers/register"
-import { handleSignIn } from "./controllers/signin"
+import handleRegister from "./controllers/register"
+import handleSignIn from "./controllers/signin"
 import { handleApiCall, handleImage } from "./controllers/image.js"
-import { handleProfile } from "./controllers/profile"
+import handleProfile from "./controllers/profile"
 
 require("dotenv").config()
 
