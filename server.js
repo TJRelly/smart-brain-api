@@ -4,10 +4,10 @@ import bcrypt from "bcrypt-nodejs"
 import cors from "cors"
 import knex from "knex"
 
-import handleRegister from "./controllers/register"
-import handleSignIn from "./controllers/signin"
+import handleRegister from "./controllers/register.js"
+import handleSignIn from "./controllers/signin.js"
 import { handleApiCall, handleImage } from "./controllers/image.js"
-import handleProfile from "./controllers/profile"
+import handleProfile from "./controllers/profile.js"
 
 require("dotenv").config()
 
