@@ -3,6 +3,7 @@ import json from "body-parser"
 import bcrypt from "bcrypt-nodejs"
 import cors from "cors"
 import knex from "knex"
+import dotenv from 'dotenv'
 
 import handleRegister from "./controllers/register.js"
 import handleSignIn from "./controllers/signin.js"
@@ -10,7 +11,7 @@ import handleApiCall from "./controllers/image.js"
 import handleImage from "./controllers/image.js"
 import handleProfile from "./controllers/profile.js"
 
-require("dotenv").config()
+dotenv.config()
 
 const db = knex({
   client: "pg",
