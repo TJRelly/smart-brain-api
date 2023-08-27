@@ -54,6 +54,6 @@ handleImage = (req, res, db) => {
 }
 
 export default {
+  handleApiCall,
   handleImage,
-  handleApiCall
 }
