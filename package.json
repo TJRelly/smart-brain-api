@@ -1,10 +1,10 @@
 {
   "name": "smart-brain-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./api/index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "echo Hi Vercel!"
   },
