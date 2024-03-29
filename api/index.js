@@ -9,7 +9,6 @@ const register = require("../controllers/register");
 const signin = require("../controllers/signin");
 const image = require("../controllers/image").default;
 const profile = require("../controllers/profile");
-const allowCors = require("../conrollers/allowCors")
 
 require("dotenv").config();
 
@@ -25,7 +24,6 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(allowCors)
 
 app.post("/signin", (req, res) => {
   signin.handleSignIn(req, res, bcrypt, db);
