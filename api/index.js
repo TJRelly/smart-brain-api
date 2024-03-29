@@ -5,10 +5,10 @@ const cors = require("cors");
 const knex = require("knex");
 const fetch = require("node-fetch");
 
-const register = require("./controllers/register");
-const signin = require("./controllers/signin");
-const image = require("./controllers/image").default;
-const profile = require("./controllers/profile");
+const register = require("../controllers/register");
+const signin = require("../controllers/signin");
+const image = require("../controllers/image").default;
+const profile = require("../controllers/profile");
 
 require("dotenv").config();
 
