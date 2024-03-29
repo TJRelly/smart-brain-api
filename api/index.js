@@ -25,7 +25,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-allowCors(app)
+app.use(allowCors)
 
 app.post("/signin", (req, res) => {
   signin.handleSignIn(req, res, bcrypt, db);
