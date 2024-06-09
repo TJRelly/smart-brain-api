@@ -7,7 +7,7 @@ const fetch = require("node-fetch");
 
 const register = require("../controllers/register");
 const signin = require("../controllers/signin");
-const image = require("../controllers/image").default;
+const image = require("../controllers/image");
 const profile = require("../controllers/profile");
 
 require("dotenv").config();
